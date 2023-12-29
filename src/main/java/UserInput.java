@@ -32,13 +32,13 @@ public class UserInput {
         // Display the options to the user
         displayOptions(optionMapping);
 
-        // Get user choice
         int userChoice = getUserChoice(scanner, optionMapping.size());
 
         // Process the user's choice
         String selectedOption = optionMapping.get(userChoice);
         System.out.println("You chose: " + selectedOption);
-//        src/main/resources/data/heart_rate
+        
+        //src/main/resources/data/heart_rate
 
         return selectedOption;
     }
@@ -94,7 +94,7 @@ public class UserInput {
             System.out.print("Enter the number of your choice (1-" + maxOption + "): ");
             while (!scanner.hasNextInt()) {
                 System.out.println("Invalid input. Please enter a number.");
-                scanner.next(); // consume the invalid input
+                scanner.next();
             }
             choice = scanner.nextInt();
         } while (choice < 1 || choice > maxOption);
