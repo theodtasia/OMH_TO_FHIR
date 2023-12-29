@@ -1,0 +1,14 @@
+{
+    "body_fat_percentage": {
+        "value": 18,
+        "unit": "%"
+    },
+    "effective_time_frame": {
+        "time_interval": {
+            "start_date_time": "2022-01-01T00:00:00Z",
+            "end_date_time": "2022-12-31T23:59:59Z"
+        }
+    },
+    "descriptive_statistic": "maximum",
+    "id": "4312"
+}

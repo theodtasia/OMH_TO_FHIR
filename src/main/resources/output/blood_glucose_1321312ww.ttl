@@ -1,0 +1,111 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix fhir_instance: <http://hl7.org/fhir/fhir_instances/> .
+@prefix schema: <http://schema.org/> .
+
+<http://hl7.org/fhir_instances/blood_glucose_1321312ww> fhir:component <http://hl7.org/fhir_instances/component_systolic_blood_pressure_0>,
+    <http://hl7.org/fhir_instances/component_diastolic_blood_pressure_1>, <http://hl7.org/fhir_instances/component_body_posture_3>,
+    <http://hl7.org/fhir_instances/component_temporal_relationship_to_physical_activity_5>;
+  fhir:value <http://hl7.org/fhir_instances/Quantity0>, <http://hl7.org/fhir_instances/Quantity1>,
+    <http://hl7.org/fhir_instances/Period2>;
+  fhir:bodySite <http://hl7.org/fhir_instances/bodiSite_measurement_location_4>;
+  fhir:code <http://hl7.org/fhir_instances/code_descriptive_statistic_6> .
+
+<http://hl7.org/fhir_instances/component_systolic_blood_pressure_0> fhir:code <http://hl7.org/fhir_instances/Code_systolic_blood_pressure_0> .
+
+<http://hl7.org/fhir_instances/Code_systolic_blood_pressure_0> fhir:coding <http://hl7.org/fhir_instances/Coding_systolic_blood_pressure_0> .
+
+<http://hl7.org/fhir_instances/120> a fhir:decimal .
+
+<http://hl7.org/fhir_instances/Quantity0> a fhir:Quantity;
+  fhir:Quantity.value <http://hl7.org/fhir_instances/120>;
+  fhir:Quantity.unit <http://hl7.org/fhir_instances/mmHg> .
+
+<http://hl7.org/fhir_instances/mmHg> a fhir:CodeableConcept .
+
+<http://hl7.org/fhir_instances/component_diastolic_blood_pressure_1> fhir:code <http://hl7.org/fhir_instances/Code_diastolic_blood_pressure_1> .
+
+<http://hl7.org/fhir_instances/Code_diastolic_blood_pressure_1> fhir:coding <http://hl7.org/fhir_instances/Coding_diastolic_blood_pressure_1> .
+
+<http://hl7.org/fhir_instances/80> a fhir:decimal .
+
+<http://hl7.org/fhir_instances/Quantity1> a fhir:Quantity;
+  fhir:Quantity.value <http://hl7.org/fhir_instances/80>;
+  fhir:Quantity.unit <http://hl7.org/fhir_instances/mmHg> .
+
+<http://hl7.org/fhir_instances/component_body_posture_3> fhir:code <http://hl7.org/fhir_instances/Code_body_posture_3>;
+  fhir:valueCodeableConcept <http://hl7.org/fhir_instances/CodeableConcept_body_posture_3> .
+
+<http://hl7.org/fhir_instances/Code_body_posture_3> fhir:code <http://hl7.org/fhir_instances/Coding_body_posture_3> .
+
+<http://hl7.org/fhir_instances/SNOMEDCT> a fhir:string .
+
+<http://hl7.org/fhir_instances/Standing> a fhir:string .
+
+<http://hl7.org/fhir_instances/102538003> a fhir:code .
+
+<http://hl7.org/fhir_instances/Coding_body_posture_3> fhir:Coding.code <http://hl7.org/fhir_instances/102538003>;
+  fhir:Coding.display <http://hl7.org/fhir_instances/Standing>;
+  fhir:Coding.system <http://hl7.org/fhir_instances/SNOMEDCT> .
+
+<http://hl7.org/fhir_instances/CodeableConcept_body_posture_3> fhir:CodeableConcept.coding
+    <http://hl7.org/fhir_instances/CodeableConcept_Coding_body_posture_3>;
+  fhir:CodeableConcept.text <http://hl7.org/fhir_instances/STANDING> .
+
+<http://hl7.org/fhir_instances/CodeableConcept_Coding_body_posture_3> fhir:Coding.code
+    <http://hl7.org/fhir_instances/102538003>;
+  fhir:Coding.display <http://hl7.org/fhir_instances/Standing>;
+  fhir:Coding.system <http://hl7.org/fhir_instances/SNOMEDCT> .
+
+<http://hl7.org/fhir_instances/CodeableConcept_measurement_location> fhir:CodeableConcept.text
+    <http://hl7.org/fhir_instances/LEFT_UPPER_ARM>;
+  fhir:CodeableConcept.coding <http://hl7.org/fhir_instances/Coding_measurement_location_4> .
+
+<http://hl7.org/fhir_instances/CodeSystem_body_location> a fhir:string .
+
+<http://hl7.org/fhir_instances/left_upper_arm> a fhir:code .
+
+<http://hl7.org/fhir_instances/LEFT_UPPER_ARM> a fhir:string .
+
+<http://hl7.org/fhir_instances/bodiSite_measurement_location_4> fhir:coding <http://hl7.org/fhir_instances/CodeableConcept_measurement_location_4> .
+
+<http://hl7.org/fhir_instances/Coding_measurement_location_4> fhir:Concept.system
+    <http://hl7.org/fhir_instances/CodeSystem_body_location>;
+  fhir:Code.code <http://hl7.org/fhir_instances/left_upper_arm> .
+
+<http://hl7.org/fhir_instances/component_temporal_relationship_to_physical_activity_5>
+  fhir:code <http://hl7.org/fhir_instances/Code_temporal_relationship_to_physical_activity_5>;
+  fhir:valueCodeableConcept <http://hl7.org/fhir_instances/CodeableConcept_temporal_relationship_to_physical_activity_5> .
+
+<http://hl7.org/fhir_instances/Code_temporal_relationship_to_physical_activity_5>
+  fhir:code <http://hl7.org/fhir_instances/Coding_temporal_relationship_to_physical_activity_5> .
+
+<http://hl7.org/fhir_instances/Active> a fhir:string .
+
+<http://hl7.org/fhir_instances/55561003> a fhir:code .
+
+<http://hl7.org/fhir_instances/Coding_temporal_relationship_to_physical_activity_5>
+  fhir:Coding.code <http://hl7.org/fhir_instances/55561003>;
+  fhir:Coding.display <http://hl7.org/fhir_instances/Active>;
+  fhir:Coding.system <http://hl7.org/fhir_instances/SNOMEDCT> .
+
+<http://hl7.org/fhir_instances/CodeableConcept_temporal_relationship_to_physical_activity_5>
+  fhir:CodeableConcept.coding <http://hl7.org/fhir_instances/CodeableConcept_Coding_temporal_relationship_to_physical_activity_5>;
+  fhir:CodeableConcept.text <http://hl7.org/fhir_instances/ACTIVE> .
+
+<http://hl7.org/fhir_instances/CodeableConcept_Coding_temporal_relationship_to_physical_activity_5>
+  fhir:Coding.code <http://hl7.org/fhir_instances/55561003>;
+  fhir:Coding.display <http://hl7.org/fhir_instances/Active>;
+  fhir:Coding.system <http://hl7.org/fhir_instances/SNOMEDCT> .
+
+<http://hl7.org/fhir_instances/code_descriptive_statistic_6> fhir:coding <http://hl7.org/fhir_instances/Coding_descriptive_statistic_6> .
+
+<http://hl7.org/fhir_instances/descriptive_statistic> a fhir:code .
+
+<http://hl7.org/fhir_instances/DESCRIPTIVE_STATISTIC> a fhir:code .
+
+<http://hl7.org/fhir_instances/omh_fhir_observation_codes> a fhir:string .
+
+<http://hl7.org/fhir_instances/Coding_descriptive_statistic_6> fhir:Coding.system
+    <http://hl7.org/fhir_instances/omh_fhir_observation_codes>;
+  fhir:Coding.code <http://hl7.org/fhir_instances/descriptive_statistic>;
+  fhir:Coding.display <http://hl7.org/fhir_instances/DESCRIPTIVE_STATISTIC> .

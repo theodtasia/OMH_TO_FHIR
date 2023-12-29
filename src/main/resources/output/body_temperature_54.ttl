@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix fhir_instance: <http://hl7.org/fhir_instances/> .
+@prefix schema: <http://schema.org/> .
+
+fhir_instance:body_temperature_54 a fhir:Observation;
+  fhir:Observation.code fhir_instance:Coding_8310-5;
+  fhir:value fhir_instance:Quantity0, fhir_instance:Period1;
+  fhir:code fhir_instance:code_descriptive_statistic_2;
+  fhir:bodySite fhir_instance:bodiSite_measurement_location_3;
+  fhir:component fhir_instance:component_temporal_relationship_to_sleep_4 .
+
+fhir_instance:Coding_8310-5 fhir:Coding.code fhir_instance:8310-5;
+  fhir:Coding.display fhir_instance:Body_temperature;
+  fhir:Code.system fhir_instance:loinc .
+
+fhir_instance:8310-5 a fhir:code .
+
+fhir_instance:loinc a fhir:string .
+
+fhir_instance:Body_temperature a fhir:string .
+
+fhir_instance:98.6 a fhir:decimal .
+
+fhir_instance:Quantity0 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:98.6;
+  fhir:Quantity.unit fhir_instance:F .
+
+fhir_instance:F a fhir:CodeableConcept .
+
+fhir_instance:code_descriptive_statistic_2 fhir:coding fhir_instance:Coding_descriptive_statistic_2 .
+
+fhir_instance:descriptive_statistic a fhir:code .
+
+fhir_instance:DESCRIPTIVE_STATISTIC a fhir:code .
+
+fhir_instance:omh_fhir_observation_codes a fhir:string .
+
+fhir_instance:Coding_descriptive_statistic_2 fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:descriptive_statistic;
+  fhir:Coding.display fhir_instance:DESCRIPTIVE_STATISTIC .
+
+fhir_instance:CodeableConcept_measurement_location fhir:CodeableConcept.text fhir_instance:ORAL;
+  fhir:CodeableConcept.coding fhir_instance:Coding_measurement_location_3 .
+
+fhir_instance:CodeSystem_body_location a fhir:string .
+
+fhir_instance:oral a fhir:code .
+
+fhir_instance:ORAL a fhir:string .
+
+fhir_instance:bodiSite_measurement_location_3 fhir:coding fhir_instance:CodeableConcept_measurement_location_3 .
+
+fhir_instance:Coding_measurement_location_3 fhir:Concept.system fhir_instance:CodeSystem_body_location;
+  fhir:Code.code fhir_instance:oral .
+
+fhir_instance:component_temporal_relationship_to_sleep_4 fhir:code fhir_instance:Code_temporal_relationship_to_sleep_4;
+  fhir:valueCodeableConcept fhir_instance:CodeableConcept_temporal_relationship_to_sleep_4 .
+
+fhir_instance:Code_temporal_relationship_to_sleep_4 fhir:code fhir_instance:Coding_temporal_relationship_to_sleep_4 .
+
+fhir_instance:SNOMEDCT a fhir:string .
+
+fhir_instance:During_sleep a fhir:string .
+
+fhir_instance:309610004 a fhir:code .
+
+fhir_instance:Coding_temporal_relationship_to_sleep_4 fhir:Coding.code fhir_instance:309610004;
+  fhir:Coding.display fhir_instance:During_sleep;
+  fhir:Coding.system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_temporal_relationship_to_sleep_4 fhir:CodeableConcept.coding
+    fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_4;
+  fhir:CodeableConcept.text fhir_instance:DURING_SLEEP .
+
+fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_4 fhir:Coding.code
+    fhir_instance:309610004;
+  fhir:Coding.display fhir_instance:During_sleep;
+  fhir:Coding.system fhir_instance:SNOMEDCT .

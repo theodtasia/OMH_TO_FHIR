@@ -1,0 +1,19 @@
+{
+    "systolic_blood_pressure": {
+        "value": 120,
+        "unit": "mmHg"
+    },
+    "diastolic_blood_pressure": {
+        "value": 80,
+        "unit": "mmHg"
+    },
+    "id": "1321312ww",
+    "effective_time_frame": {
+        "start_time": "2023-10-08T14:00:00Z",
+        "end_time": "2023-10-08T14:15:00Z"
+    },
+    "body_posture": "standing",
+    "measurement_location": "left upper arm",
+    "temporal_relationship_to_physical_activity": "active",
+    "descriptive_statistic": "count"
+}

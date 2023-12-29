@@ -1,0 +1,14 @@
+{
+    "body_temperature": {
+        "value": 98.6,
+        "unit": "F"
+    },
+    "id":"Jonh_k_323",
+    "effective_time_frame": {
+        "start_time": "2023-10-08T11:00:00Z",
+        "end_time": "2023-10-08T11:30:00Z"
+    },
+    "temporal_relationship_to_sleep": "during sleep",
+    "measurement_location": "oral",
+    "descriptive_statistic": "average"
+}

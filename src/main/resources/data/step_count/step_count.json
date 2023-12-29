@@ -1,0 +1,15 @@
+{
+    "step_count": {
+        "value": 5000,
+        "unit": "steps"
+    },
+    "id":"Jonh_k_323",
+    "effective_time_frame": {
+        "time_interval": {
+            "start_time": "2023-10-08T13:00:00Z",
+            "end_time": "2023-10-08T13:30:00Z"
+        }
+    },
+    "descriptive_statistic": "average",
+    "descriptive_statistic_denominator": "d"
+}

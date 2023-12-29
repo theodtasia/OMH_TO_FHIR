@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix fhir_instance: <http://hl7.org/fhir_instances/> .
+@prefix schema: <http://schema.org/> .
+
+fhir_instance:heart_rate_12131313 a fhir:Observation;
+  fhir:Observation.code fhir_instance:Coding_8867-4;
+  fhir:value fhir_instance:Quantity0;
+  fhir:effectivePeriod fhir_instance:Period1;
+  fhir:code fhir_instance:code_descriptive_statistic_2;
+  fhir:component fhir_instance:component_temporal_relationship_to_physical_activity_3,
+    fhir_instance:component_temporal_relationship_to_sleep_4 .
+
+fhir_instance:Coding_8867-4 fhir:Coding.code fhir_instance:8867-4;
+  fhir:Coding.display fhir_instance:Heart_rate;
+  fhir:Code.system fhir_instance:loinc .
+
+fhir_instance:8867-4 a fhir:code .
+
+fhir_instance:loinc a fhir:string .
+
+fhir_instance:Heart_rate a fhir:string .
+
+fhir_instance:75 a fhir:decimal .
+
+fhir_instance:Quantity0 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:75;
+  fhir:Quantity.unit fhir_instance:beats%2Fmin .
+
+fhir_instance:beats%2Fmin a fhir:CodeableConcept .
+
+fhir_instance:Period1 a fhir:Period;
+  fhir:effectiveDuration fhir_instance:Duration1;
+  fhir:end fhir_instance:2013-02-05T07:35:00Z .
+
+fhir_instance:Duration1 a fhir:Duration;
+  fhir:Quantity.value fhir_instance:10.0;
+  fhir:Quantity.unit fhir_instance:d .
+
+fhir_instance:10.0 a fhir:decimal .
+
+fhir_instance:d a fhir:CodeableConcept .
+
+fhir_instance:2013-02-05T07:35:00Z a fhir:dateTime .
+
+fhir_instance:code_descriptive_statistic_2 fhir:coding fhir_instance:Coding_descriptive_statistic_2 .
+
+fhir_instance:descriptive_statistic a fhir:code .
+
+fhir_instance:DESCRIPTIVE_STATISTIC a fhir:code .
+
+fhir_instance:omh_fhir_observation_codes a fhir:string .
+
+fhir_instance:Coding_descriptive_statistic_2 fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:descriptive_statistic;
+  fhir:Coding.display fhir_instance:DESCRIPTIVE_STATISTIC .
+
+fhir_instance:component_temporal_relationship_to_physical_activity_3 fhir:code fhir_instance:Code_temporal_relationship_to_physical_activity_3;
+  fhir:valueCodeableConcept fhir_instance:CodeableConcept_temporal_relationship_to_physical_activity_3 .
+
+fhir_instance:Code_temporal_relationship_to_physical_activity_3 fhir:code fhir_instance:Coding_temporal_relationship_to_physical_activity_3 .
+
+fhir_instance:SNOMEDCT a fhir:string .
+
+fhir_instance:Before_exercise a fhir:string .
+
+fhir_instance:307166007 a fhir:code .
+
+fhir_instance:Coding_temporal_relationship_to_physical_activity_3 fhir:Coding.code
+    fhir_instance:307166007;
+  fhir:Coding.display fhir_instance:Before_exercise;
+  fhir:Coding.system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_temporal_relationship_to_physical_activity_3 fhir:CodeableConcept.coding
+    fhir_instance:CodeableConcept_Coding_temporal_relationship_to_physical_activity_3;
+  fhir:CodeableConcept.text fhir_instance:BEFORE_EXERCISE .
+
+fhir_instance:CodeableConcept_Coding_temporal_relationship_to_physical_activity_3
+  fhir:Coding.code fhir_instance:307166007;
+  fhir:Coding.display fhir_instance:Before_exercise;
+  fhir:Coding.system fhir_instance:SNOMEDCT .
+
+fhir_instance:component_temporal_relationship_to_sleep_4 fhir:code fhir_instance:Code_temporal_relationship_to_sleep_4;
+  fhir:valueCodeableConcept fhir_instance:CodeableConcept_temporal_relationship_to_sleep_4 .
+
+fhir_instance:Code_temporal_relationship_to_sleep_4 fhir:code fhir_instance:Coding_temporal_relationship_to_sleep_4 .
+
+fhir_instance:Before_sleeping a fhir:string .
+
+fhir_instance:307155000 a fhir:code .
+
+fhir_instance:Coding_temporal_relationship_to_sleep_4 fhir:Coding.code fhir_instance:307155000;
+  fhir:Coding.display fhir_instance:Before_sleeping;
+  fhir:Coding.system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_temporal_relationship_to_sleep_4 fhir:CodeableConcept.coding
+    fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_4;
+  fhir:CodeableConcept.text fhir_instance:BEFORE_SLEEPING .
+
+fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_4 fhir:Coding.code
+    fhir_instance:307155000;
+  fhir:Coding.display fhir_instance:Before_sleeping;
+  fhir:Coding.system fhir_instance:SNOMEDCT .

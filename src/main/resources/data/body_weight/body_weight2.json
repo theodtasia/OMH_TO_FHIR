@@ -1,0 +1,11 @@
+{
+    "body_weight": {
+        "value": 70,
+        "unit": "kg"
+    },
+    "id": "4312",
+    "effective_time_frame": {
+        "date_time": "2023-02-05T09:45:00-08:00"
+    },
+    "descriptive_statistic": "minimum"
+}

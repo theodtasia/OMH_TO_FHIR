@@ -1,0 +1,19 @@
+{
+    "heart_rate": {
+        "value": 75,
+        "unit": "beats/min"
+    },
+    "id": "Jonh_K_12",
+    "effective_time_frame": {
+        "time_interval": {
+            "duration": {
+                "value": 10,
+                "unit": "d"
+            },
+            "end_date_time": "2013-02-05T07:35:00Z"
+        }
+    },
+    "descriptive_statistic": "average",
+    "temporal_relationship_to_physical_activity": "before exercise",
+    "temporal_relationship_to_sleep": "before sleeping"
+}
