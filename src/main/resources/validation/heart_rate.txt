@@ -1,0 +1,23 @@
+@prefix fhir_instance: <http://hl7.org/fhir_instances/> .
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+fhir_instance:TestShape
+    a sh:NodeShape ;
+    sh:targetClass fhir:Observation ;
+    sh:property [
+        sh:path fhir:component ;
+        sh:node fhir_instance:ComponentShape
+    ] ;
+    sh:property [
+        sh:path fhir:value ;
+        sh:node fhir_instance:ValueShape
+    ] ;
+    sh:property [
+        sh:path fhir:effectiveDateTime ;
+        sh:node fhir_instance:DateTimeShape
+    ] ;
+    sh:property [
+        sh:path fhir:code ;
+        sh:node fhir_instance:CodeShape
+    ] .

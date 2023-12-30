@@ -301,12 +301,18 @@ public class MappingModelBuilder {
         // Call the createTurtleFile method
         GenerateFiles.createTurtleFile(model, observationInstanceName);
   
-
+        String outputDirectory = "src/main/resources/output/";
+        String fileNameObservation = outputDirectory + observationInstanceName + ".ttl";
+        
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
         boolean validate = true;
-        new GraphDB(validate);
+		String fileNameObservation;
+		String outputDirectory = "src/main/resources/output/";
+	    fileNameObservation = outputDirectory + observationInstanceName + ".ttl";
+	     
+		new GraphDB(fileNameObservation, observation);
         }
 	}
 	

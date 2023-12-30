@@ -18,7 +18,6 @@ public class GenerateFiles {
         if (!outputDir.exists()) {
             if (!outputDir.mkdirs()) {
                 System.err.println("Error creating output directory: " + outputDirectory);
-                return;
             }
         }
         try (FileOutputStream fos = new FileOutputStream(new File(fileName))) {
@@ -28,7 +27,6 @@ public class GenerateFiles {
             // Example: Rio.write(model, fos, RDFFormat.TURTLE);
             Rio.write(model, fos, RDFFormat.TURTLE);
             System.out.println("Turtle file created: " + fileName);
-
         } catch (IOException e) {
             System.out.println("SSEE ");
             System.err.println("Error creating Turtle file: " + e.getMessage());
