@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix fhir_instance: <http://hl7.org/fhir_instances/> .
+@prefix schema: <http://schema.org/> .
+
+fhir_instance:kcal_burned_Jonh_k_323 a fhir:Observation;
+  fhir:Observation.code fhir_instance:Coding_41981-2, fhir_instance:code_activity_name_1,
+    fhir_instance:code_descriptive_statistic_4, fhir_instance:code_descriptive_statistic_denominator_5;
+  fhir:Observation.valueQuantity fhir_instance:Quantity0;
+  fhir:Observation.subject fhir_instance:Patient_Jonh_k_323 .
+
+fhir_instance:41981-2 a fhir:code .
+
+fhir_instance:loinc a fhir:string .
+
+fhir_instance:CALORIED_BURNED a fhir:string .
+
+fhir_instance:Coding_41981-2 fhir:code fhir_instance:41981-2;
+  fhir:display fhir_instance:CALORIED_BURNED;
+  fhir:system fhir_instance:loinc .
+
+fhir_instance:350 a fhir:decimal .
+
+fhir_instance:Quantity0 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:350;
+  fhir:Quantity.unit fhir_instance:kcal .
+
+fhir_instance:kcal a fhir:string .
+
+fhir_instance:code_activity_name_1 fhir:coding fhir_instance:Coding_jogging .
+
+fhir_instance:jogging a fhir:code .
+
+fhir_instance:JOGGING a fhir:string .
+
+fhir_instance:omh_fhir_observation_codes a fhir:string .
+
+fhir_instance:Coding_jogging fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:jogging;
+  fhir:Coding.display fhir_instance:JOGGING .
+
+fhir_instance:Patient_Jonh_k_323 a fhir:Patient;
+  fhir:Patient.identifier fhir_instance:Jonh_k_323 .
+
+fhir_instance:code_descriptive_statistic_4 fhir:coding fhir_instance:Coding_sum .
+
+fhir_instance:sum a fhir:code .
+
+fhir_instance:SUM a fhir:string .
+
+fhir_instance:Coding_sum fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:sum;
+  fhir:Coding.display fhir_instance:SUM .
+
+fhir_instance:code_descriptive_statistic_denominator_5 fhir:coding fhir_instance:Coding_d .
+
+fhir_instance:d a fhir:code .
+
+fhir_instance:D a fhir:string .
+
+fhir_instance:Coding_d fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:d;
+  fhir:Coding.display fhir_instance:D .

@@ -1,0 +1,15 @@
+{
+    "systolic_blood_pressure": {
+        "value": 120,
+        "unit": "mmHg"
+    },
+    "diastolic_blood_pressure": {
+        "value": 80,
+        "unit": "mmHg"
+    },
+    "id": "Jonh_k_323",
+    "body_posture": "standing",
+    "measurement_location": "left upper arm",
+    "temporal_relationship_to_physical_activity": "active",
+    "descriptive_statistic": "count"
+}

@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix fhir_instance: <http://hl7.org/fhir_instances/> .
+@prefix schema: <http://schema.org/> .
+
+fhir_instance:orientation_SEE fhir:component fhir_instance:component_angular_velocity_x_0,
+    fhir_instance:component_angular_velocity_y_1, fhir_instance:component_angular_velocity_z_2,
+    fhir_instance:component_sensor_body_location_3;
+  fhir:value fhir_instance:Quantity0, fhir_instance:Quantity1, fhir_instance:Quantity2;
+  fhir:effectiveDateTime fhir_instance:2015-08-18T07:25:00Z;
+  fhir:code fhir_instance:code_descriptive_statistic_5 .
+
+fhir_instance:component_angular_velocity_x_0 fhir:code fhir_instance:Code_angular_velocity_x_0 .
+
+fhir_instance:Code_angular_velocity_x_0 fhir:coding fhir_instance:Coding_angular_velocity_x_0 .
+
+fhir_instance:0.0596923828125 a fhir:decimal .
+
+fhir_instance:Quantity0 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:0.0596923828125;
+  fhir:Quantity.unit fhir_instance:rad%2Fs .
+
+fhir_instance:rad%2Fs a fhir:CodeableConcept .
+
+fhir_instance:component_angular_velocity_y_1 fhir:code fhir_instance:Code_angular_velocity_y_1 .
+
+fhir_instance:Code_angular_velocity_y_1 fhir:coding fhir_instance:Coding_angular_velocity_y_1 .
+
+fhir_instance:0.0125 a fhir:decimal .
+
+fhir_instance:Quantity1 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:0.0125;
+  fhir:Quantity.unit fhir_instance:rad%2Fs .
+
+fhir_instance:component_angular_velocity_z_2 fhir:code fhir_instance:Code_angular_velocity_z_2 .
+
+fhir_instance:Code_angular_velocity_z_2 fhir:coding fhir_instance:Coding_angular_velocity_z_2 .
+
+fhir_instance:1.0E-4 a fhir:decimal .
+
+fhir_instance:Quantity2 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:1.0E-4;
+  fhir:Quantity.unit fhir_instance:rad%2Fs .
+
+fhir_instance:component_sensor_body_location_3 fhir:code fhir_instance:Code_sensor_body_location_3;
+  fhir:valueCodeableConcept fhir_instance:CodeableConcept_sensor_body_location_3 .
+
+fhir_instance:Code_sensor_body_location_3 fhir:code fhir_instance:Coding_sensor_body_location_3 .
+
+fhir_instance:omh_to_fhir_body_location a fhir:string .
+
+fhir_instance:RIGHT_WRIST a fhir:string .
+
+fhir_instance:right_wrist a fhir:code .
+
+fhir_instance:Coding_sensor_body_location_3 fhir:Coding.code fhir_instance:right_wrist;
+  fhir:Coding.display fhir_instance:RIGHT_WRIST;
+  fhir:Coding.system fhir_instance:omh_to_fhir_body_location .
+
+fhir_instance:CodeableConcept_sensor_body_location_3 fhir:CodeableConcept.coding fhir_instance:CodeableConcept_Coding_sensor_body_location_3;
+  fhir:CodeableConcept.text fhir_instance:RIGHT_WRIST .
+
+fhir_instance:CodeableConcept_Coding_sensor_body_location_3 fhir:Coding.code fhir_instance:right_wrist;
+  fhir:Coding.display fhir_instance:RIGHT_WRIST;
+  fhir:Coding.system fhir_instance:omh_to_fhir_body_location .
+
+fhir_instance:2015-08-18T07:25:00Z a fhir:datetime .
+
+fhir_instance:code_descriptive_statistic_5 fhir:coding fhir_instance:Coding_descriptive_statistic_5 .
+
+fhir_instance:descriptive_statistic a fhir:code .
+
+fhir_instance:DESCRIPTIVE_STATISTIC a fhir:code .
+
+fhir_instance:omh_fhir_observation_codes a fhir:string .
+
+fhir_instance:Coding_descriptive_statistic_5 fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:descriptive_statistic;
+  fhir:Coding.display fhir_instance:DESCRIPTIVE_STATISTIC .

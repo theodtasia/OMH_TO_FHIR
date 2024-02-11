@@ -1,0 +1,143 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix fhir_instance: <http://hl7.org/fhir_instances/> .
+@prefix schema: <http://schema.org/> .
+
+fhir_instance:body_temperature_Jonh_k_323 a fhir:Observation;
+  fhir:Observation.code fhir_instance:Coding_8310-5, fhir_instance:code_descriptive_statistic_5;
+  fhir:Observation.valueQuantity fhir_instance:Quantity0;
+  fhir:Observation.subject fhir_instance:Patient_Jonh_k_323;
+  fhir:Observation.effectivePeriod fhir_instance:Period2;
+  fhir:Observation.component fhir_instance:component_temporal_relationship_to_sleep_3;
+  fhir:Observation.bodySite fhir_instance:CodeableConcept_measurement_location_4 .
+
+fhir_instance:8310-5 a fhir:code .
+
+fhir_instance:loinc a fhir:string .
+
+fhir_instance:Body_temperature a fhir:string .
+
+fhir_instance:Coding_8310-5 fhir:code fhir_instance:8310-5;
+  fhir:display fhir_instance:Body_temperature;
+  fhir:system fhir_instance:loinc .
+
+fhir_instance:98.6 a fhir:decimal .
+
+fhir_instance:Quantity0 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:98.6;
+  fhir:Quantity.unit fhir_instance:F .
+
+fhir_instance:F a fhir:string .
+
+fhir_instance:Patient_Jonh_k_323 a fhir:Patient;
+  fhir:Patient.identifier fhir_instance:Jonh_k_323 .
+
+fhir_instance:2012-10-08T11:00:00Z a fhir:dateTime .
+
+fhir_instance:Period2 a fhir:Period;
+  fhir:Observation.effectivePeriod.start fhir_instance:2012-10-08T11:00:00Z;
+  fhir:Observation.effectivePeriod.end fhir_instance:2013-02-05T07:35:00Z .
+
+fhir_instance:2013-02-05T07:35:00Z a fhir:dateTime .
+
+fhir_instance:component_temporal_relationship_to_sleep_3 fhir:code fhir_instance:Code_temporal_relationship_to_sleep_3;
+  fhir:valueCodeableConcept fhir_instance:CodeableConcept_temporal_relationship_to_sleep_3 .
+
+fhir_instance:Code_temporal_relationship_to_sleep_3 fhir:code fhir_instance:Coding_temporal_relationship_to_sleep_3 .
+
+fhir_instance:SNOMEDCT a fhir:string .
+
+fhir_instance:During_sleep a fhir:string .
+
+fhir_instance:309610004 a fhir:code .
+
+fhir_instance:Coding_temporal_relationship_to_sleep_3 fhir:code fhir_instance:309610004;
+  fhir:display fhir_instance:During_sleep;
+  fhir:system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_temporal_relationship_to_sleep_3 fhir:coding fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_3;
+  fhir:text fhir_instance:DURING_SLEEP .
+
+fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_3 fhir:code fhir_instance:309610004;
+  fhir:display fhir_instance:During_sleep;
+  fhir:system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_measurement_location fhir:text fhir_instance:ORAL .
+
+fhir_instance:CodeSystem_body_location a fhir:string .
+
+fhir_instance:oral a fhir:code .
+
+fhir_instance:ORAL a fhir:string .
+
+fhir_instance:CodeableConcept_measurement_location_4 fhir:coding fhir_instance:CodeableConcept_Coding_measurement_location_4;
+  fhir:display fhir_instance:ORAL .
+
+fhir_instance:CodeableConcept_Coding_measurement_location_4 fhir:code fhir_instance:oral;
+  fhir:system fhir_instance:CodeSystem_body_location .
+
+fhir_instance:code_descriptive_statistic_5 fhir:coding fhir_instance:Coding_average .
+
+fhir_instance:average a fhir:code .
+
+fhir_instance:AVERAGE a fhir:string .
+
+fhir_instance:omh_fhir_observation_codes a fhir:string .
+
+fhir_instance:Coding_average fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:average;
+  fhir:Coding.display fhir_instance:AVERAGE .
+
+fhir_instance:body_temperature_4312 a fhir:Observation;
+  fhir:Observation.code fhir_instance:Coding_8310-5, fhir_instance:code_descriptive_statistic_11;
+  fhir:Observation.valueQuantity fhir_instance:Quantity6;
+  fhir:Observation.subject fhir_instance:Patient_4312;
+  fhir:Observation.effectivePeriod fhir_instance:Period8;
+  fhir:Observation.component fhir_instance:component_temporal_relationship_to_sleep_9;
+  fhir:Observation.bodySite fhir_instance:CodeableConcept_measurement_location_10 .
+
+fhir_instance:36.6 a fhir:decimal .
+
+fhir_instance:Quantity6 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:36.6;
+  fhir:Quantity.unit fhir_instance:C .
+
+fhir_instance:C a fhir:string .
+
+fhir_instance:Patient_4312 a fhir:Patient;
+  fhir:Patient.identifier fhir_instance:4312 .
+
+fhir_instance:2023-10-08T11:00:00Z a fhir:dateTime .
+
+fhir_instance:Period8 a fhir:Period;
+  fhir:Observation.effectivePeriod.start fhir_instance:2023-10-08T11:00:00Z;
+  fhir:Observation.effectivePeriod.end fhir_instance:2023-10-08T11:30:00Z .
+
+fhir_instance:2023-10-08T11:30:00Z a fhir:dateTime .
+
+fhir_instance:component_temporal_relationship_to_sleep_9 fhir:code fhir_instance:Code_temporal_relationship_to_sleep_9;
+  fhir:valueCodeableConcept fhir_instance:CodeableConcept_temporal_relationship_to_sleep_9 .
+
+fhir_instance:Code_temporal_relationship_to_sleep_9 fhir:code fhir_instance:Coding_temporal_relationship_to_sleep_9 .
+
+fhir_instance:Before_sleeping a fhir:string .
+
+fhir_instance:307155000 a fhir:code .
+
+fhir_instance:Coding_temporal_relationship_to_sleep_9 fhir:code fhir_instance:307155000;
+  fhir:display fhir_instance:Before_sleeping;
+  fhir:system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_temporal_relationship_to_sleep_9 fhir:coding fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_9;
+  fhir:text fhir_instance:BEFORE_SLEEPING .
+
+fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_9 fhir:code fhir_instance:307155000;
+  fhir:display fhir_instance:Before_sleeping;
+  fhir:system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_measurement_location_10 fhir:coding fhir_instance:CodeableConcept_Coding_measurement_location_10;
+  fhir:display fhir_instance:ORAL .
+
+fhir_instance:CodeableConcept_Coding_measurement_location_10 fhir:code fhir_instance:oral;
+  fhir:system fhir_instance:CodeSystem_body_location .
+
+fhir_instance:code_descriptive_statistic_11 fhir:coding fhir_instance:Coding_average .

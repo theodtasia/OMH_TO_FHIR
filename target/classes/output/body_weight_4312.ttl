@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix fhir_instance: <http://hl7.org/fhir_instances/> .
+@prefix schema: <http://schema.org/> .
+
+fhir_instance:body_weight_Jonh_k_323 a fhir:Observation;
+  fhir:Observation.code fhir_instance:Coding_29463-7, fhir_instance:code_descriptive_statistic_3;
+  fhir:Observation.valueQuantity fhir_instance:Quantity0;
+  fhir:Observation.subject fhir_instance:Patient_Jonh_k_323;
+  fhir:Observation.effectiveDateTime fhir_instance:2020-02-05T09:45:00-08:00 .
+
+fhir_instance:29463-7 a fhir:code .
+
+fhir_instance:loinc a fhir:string .
+
+fhir_instance:Body_weight a fhir:string .
+
+fhir_instance:Coding_29463-7 fhir:code fhir_instance:29463-7;
+  fhir:display fhir_instance:Body_weight;
+  fhir:system fhir_instance:loinc .
+
+fhir_instance:50 a fhir:decimal .
+
+fhir_instance:Quantity0 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:50;
+  fhir:Quantity.unit fhir_instance:kg .
+
+fhir_instance:kg a fhir:string .
+
+fhir_instance:Patient_Jonh_k_323 a fhir:Patient;
+  fhir:Patient.identifier fhir_instance:Jonh_k_323 .
+
+fhir_instance:2020-02-05T09:45:00-08:00 a fhir:dateTime .
+
+fhir_instance:code_descriptive_statistic_3 fhir:coding fhir_instance:Coding_maximum .
+
+fhir_instance:maximum a fhir:code .
+
+fhir_instance:MAXIMUM a fhir:string .
+
+fhir_instance:omh_fhir_observation_codes a fhir:string .
+
+fhir_instance:Coding_maximum fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:maximum;
+  fhir:Coding.display fhir_instance:MAXIMUM .
+
+fhir_instance:body_weight_4312 a fhir:Observation;
+  fhir:Observation.code fhir_instance:Coding_29463-7, fhir_instance:code_descriptive_statistic_7;
+  fhir:Observation.valueQuantity fhir_instance:Quantity4;
+  fhir:Observation.subject fhir_instance:Patient_4312;
+  fhir:Observation.effectiveDateTime fhir_instance:2023-02-05T09:45:00-08:00 .
+
+fhir_instance:70 a fhir:decimal .
+
+fhir_instance:Quantity4 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:70;
+  fhir:Quantity.unit fhir_instance:kg .
+
+fhir_instance:Patient_4312 a fhir:Patient;
+  fhir:Patient.identifier fhir_instance:4312 .
+
+fhir_instance:2023-02-05T09:45:00-08:00 a fhir:dateTime .
+
+fhir_instance:code_descriptive_statistic_7 fhir:coding fhir_instance:Coding_minimum .
+
+fhir_instance:minimum a fhir:code .
+
+fhir_instance:MINIMUM a fhir:string .
+
+fhir_instance:Coding_minimum fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:minimum;
+  fhir:Coding.display fhir_instance:MINIMUM .

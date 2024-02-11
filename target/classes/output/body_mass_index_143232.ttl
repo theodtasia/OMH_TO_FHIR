@@ -1,0 +1,47 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix fhir_instance: <http://hl7.org/fhir_instances/> .
+@prefix schema: <http://schema.org/> .
+
+fhir_instance:body_mass_index_143232 a fhir:Observation;
+  fhir:Observation.code fhir_instance:Coding_60621009;
+  fhir:value fhir_instance:Quantity0;
+  fhir:effectivePeriod fhir_instance:Period1;
+  fhir:code fhir_instance:code_descriptive_statistic_2 .
+
+fhir_instance:Coding_60621009 fhir:Coding.code fhir_instance:60621009;
+  fhir:Coding.display fhir_instance:Body_mass_index;
+  fhir:Code.system fhir_instance:SNOMEDCT .
+
+fhir_instance:60621009 a fhir:code .
+
+fhir_instance:SNOMEDCT a fhir:string .
+
+fhir_instance:Body_mass_index a fhir:string .
+
+fhir_instance:16 a fhir:decimal .
+
+fhir_instance:Quantity0 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:16;
+  fhir:Quantity.unit fhir_instance:kg%2Fm%5E2 .
+
+fhir_instance:kg%2Fm%5E2 a fhir:CodeableConcept .
+
+fhir_instance:2013-01-01T00:00:00Z a fhir:dateTime .
+
+fhir_instance:Period1 a fhir:Period;
+  fhir:start fhir_instance:2013-01-01T00:00:00Z;
+  fhir:end fhir_instance:2013-12-31T23:59:59Z .
+
+fhir_instance:2013-12-31T23:59:59Z a fhir:dateTime .
+
+fhir_instance:code_descriptive_statistic_2 fhir:coding fhir_instance:Coding_descriptive_statistic_2 .
+
+fhir_instance:descriptive_statistic a fhir:code .
+
+fhir_instance:DESCRIPTIVE_STATISTIC a fhir:code .
+
+fhir_instance:omh_fhir_observation_codes a fhir:string .
+
+fhir_instance:Coding_descriptive_statistic_2 fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:descriptive_statistic;
+  fhir:Coding.display fhir_instance:DESCRIPTIVE_STATISTIC .

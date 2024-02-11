@@ -1,0 +1,16 @@
+{
+    "kcal_burned": {
+        "value": 350,
+        "unit": "kcal"
+    },
+    "activity_name": "jogging",
+    "id": "Jonh_k_323",
+    "effective_time_frame": {
+        "time_interval": {
+            "start_time": "2023-10-08T12:00:00Z",
+            "end_time": "2023-10-08T12:30:00Z"
+        }
+    },
+    "descriptive_statistic": "sum",
+    "descriptive_statistic_denominator": "d"
+}

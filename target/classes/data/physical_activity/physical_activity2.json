@@ -1,0 +1,20 @@
+{
+    "activity_name":"Jogging",
+    "effective_time_frame": {
+        "time_interval": {
+            "start_date_time": "2023-12-01T08:00:00Z",
+            "end_date_time": "203-12-01T09:00:00Z"
+        }
+    },
+    "id": "4312",
+    "distance": {
+        "value": 20.0,
+        "unit": "kilometers"
+    },
+    "kcal_burned": {
+        "value": 2000,
+        "unit": "kcal"
+    },
+    "reported_activity_intensity": "moderate",
+    "met_value": 2.0
+}

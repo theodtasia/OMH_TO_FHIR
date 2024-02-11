@@ -1,0 +1,133 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix fhir_instance: <http://hl7.org/fhir_instances/> .
+@prefix schema: <http://schema.org/> .
+
+fhir_instance:blood_pressure_Jonh_k_323 a fhir:Observation;
+  fhir:Observation.code fhir_instance:Coding_85354-9, fhir_instance:code_descriptive_statistic_6;
+  fhir:Observation.component fhir_instance:component_systolic_blood_pressure_0, fhir_instance:component_diastolic_blood_pressure_1,
+    fhir_instance:component_body_posture_3, fhir_instance:component_temporal_relationship_to_physical_activity_5;
+  fhir:Observation.subject fhir_instance:Patient_Jonh_k_323;
+  fhir:Observation.bodySite fhir_instance:CodeableConcept_measurement_location_4 .
+
+fhir_instance:85354-9 a fhir:code .
+
+fhir_instance:loinc a fhir:string .
+
+fhir_instance:Blood_pressure a fhir:string .
+
+fhir_instance:Coding_85354-9 fhir:code fhir_instance:85354-9;
+  fhir:display fhir_instance:Blood_pressure;
+  fhir:system fhir_instance:loinc .
+
+fhir_instance:component_systolic_blood_pressure_0 fhir:code fhir_instance:Code_systolic_blood_pressure_0;
+  fhir:component.valueQuantity fhir_instance:Quantity0 .
+
+fhir_instance:Code_systolic_blood_pressure_0 fhir:coding fhir_instance:Coding_systolic_blood_pressure_0 .
+
+fhir_instance:Systolic_blood_pressure a fhir:string .
+
+fhir_instance:8480-6 a fhir:code .
+
+fhir_instance:Coding_systolic_blood_pressure_0 fhir:code fhir_instance:8480-6;
+  fhir:display fhir_instance:Systolic_blood_pressure;
+  fhir:system fhir_instance:loinc .
+
+fhir_instance:120 a fhir:decimal .
+
+fhir_instance:Quantity0 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:120;
+  fhir:Quantity.unit fhir_instance:mmHg .
+
+fhir_instance:mmHg a fhir:string .
+
+fhir_instance:component_diastolic_blood_pressure_1 fhir:code fhir_instance:Code_diastolic_blood_pressure_1;
+  fhir:component.valueQuantity fhir_instance:Quantity1 .
+
+fhir_instance:Code_diastolic_blood_pressure_1 fhir:coding fhir_instance:Coding_diastolic_blood_pressure_1 .
+
+fhir_instance:Diastolic_blood_pressure a fhir:string .
+
+fhir_instance:8462-4 a fhir:code .
+
+fhir_instance:Coding_diastolic_blood_pressure_1 fhir:code fhir_instance:8462-4;
+  fhir:display fhir_instance:Diastolic_blood_pressure;
+  fhir:system fhir_instance:loinc .
+
+fhir_instance:80 a fhir:decimal .
+
+fhir_instance:Quantity1 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:80;
+  fhir:Quantity.unit fhir_instance:mmHg .
+
+fhir_instance:Patient_Jonh_k_323 a fhir:Patient;
+  fhir:Patient.identifier fhir_instance:Jonh_k_323 .
+
+fhir_instance:component_body_posture_3 fhir:code fhir_instance:Code_body_posture_3;
+  fhir:valueCodeableConcept fhir_instance:CodeableConcept_body_posture_3 .
+
+fhir_instance:Code_body_posture_3 fhir:code fhir_instance:Coding_body_posture_3 .
+
+fhir_instance:SNOMEDCT a fhir:string .
+
+fhir_instance:Standing a fhir:string .
+
+fhir_instance:102538003 a fhir:code .
+
+fhir_instance:Coding_body_posture_3 fhir:code fhir_instance:102538003;
+  fhir:display fhir_instance:Standing;
+  fhir:system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_body_posture_3 fhir:coding fhir_instance:CodeableConcept_Coding_body_posture_3;
+  fhir:text fhir_instance:STANDING .
+
+fhir_instance:CodeableConcept_Coding_body_posture_3 fhir:code fhir_instance:102538003;
+  fhir:display fhir_instance:Standing;
+  fhir:system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_measurement_location fhir:text fhir_instance:LEFT_UPPER_ARM .
+
+fhir_instance:CodeSystem_body_location a fhir:string .
+
+fhir_instance:left_upper_arm a fhir:code .
+
+fhir_instance:LEFT_UPPER_ARM a fhir:string .
+
+fhir_instance:CodeableConcept_measurement_location_4 fhir:coding fhir_instance:CodeableConcept_Coding_measurement_location_4;
+  fhir:display fhir_instance:LEFT_UPPER_ARM .
+
+fhir_instance:CodeableConcept_Coding_measurement_location_4 fhir:code fhir_instance:left_upper_arm;
+  fhir:system fhir_instance:CodeSystem_body_location .
+
+fhir_instance:component_temporal_relationship_to_physical_activity_5 fhir:code fhir_instance:Code_temporal_relationship_to_physical_activity_5;
+  fhir:valueCodeableConcept fhir_instance:CodeableConcept_temporal_relationship_to_physical_activity_5 .
+
+fhir_instance:Code_temporal_relationship_to_physical_activity_5 fhir:code fhir_instance:Coding_temporal_relationship_to_physical_activity_5 .
+
+fhir_instance:Active a fhir:string .
+
+fhir_instance:55561003 a fhir:code .
+
+fhir_instance:Coding_temporal_relationship_to_physical_activity_5 fhir:code fhir_instance:55561003;
+  fhir:display fhir_instance:Active;
+  fhir:system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_temporal_relationship_to_physical_activity_5 fhir:coding
+    fhir_instance:CodeableConcept_Coding_temporal_relationship_to_physical_activity_5;
+  fhir:text fhir_instance:ACTIVE .
+
+fhir_instance:CodeableConcept_Coding_temporal_relationship_to_physical_activity_5
+  fhir:code fhir_instance:55561003;
+  fhir:display fhir_instance:Active;
+  fhir:system fhir_instance:SNOMEDCT .
+
+fhir_instance:code_descriptive_statistic_6 fhir:coding fhir_instance:Coding_count .
+
+fhir_instance:count a fhir:code .
+
+fhir_instance:COUNT a fhir:string .
+
+fhir_instance:omh_fhir_observation_codes a fhir:string .
+
+fhir_instance:Coding_count fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:count;
+  fhir:Coding.display fhir_instance:COUNT .

@@ -1,0 +1,16 @@
+{
+    "body_temperature": {
+        "value": 36.6,
+        "unit": "C"
+    },
+    "id":"4312",
+    "effective_time_frame": {
+        "time_interval": {
+            "start_date_time": "2023-10-08T11:00:00Z",
+            "end_date_time": "2023-10-08T11:30:00Z"
+        }    
+    },
+    "temporal_relationship_to_sleep": "before sleeping",
+    "measurement_location": "oral",
+    "descriptive_statistic": "average"
+}
