@@ -1,0 +1,38 @@
+##var observation
+PREFIX fhir: <http://hl7.org/fhir/>
+PREFIX fhir_instance: <http://hl7.org/fhir_instances/>
+select ?observation where {
+  ?observation a fhir:Observation ;
+               fhir:Observation.subject fhir_instance:Patient_Jonh_K_12 .
+}
+##next
+##var observation value unit
+PREFIX fhir: <http://hl7.org/fhir/>
+PREFIX fhir_instance: <http://hl7.org/fhir_instances/>
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?observation ?value ?unit WHERE {
+  # Heart Rate Observation
+  ?observation a fhir:Observation ;
+               fhir:Observation.subject fhir_instance:Patient_Jonh_K_12 ;
+               fhir:Observation.valueQuantity ?valueQuantity ;
+               fhir:Observation.code fhir_instance:Coding_8867-4 .
+
+  ?valueQuantity fhir:Quantity.value ?value ;
+                 fhir:Quantity.unit ?unit .
+
+}
+
+##next
+##var observation end
+PREFIX fhir: <http://hl7.org/fhir/>
+PREFIX fhir_instance: <http://hl7.org/fhir_instances/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select ?observation ?end where {
+  ?observation a fhir:Observation ;
+               fhir:Observation.effectivePeriod ?effectivePeriod .
+
+  ?effectivePeriod fhir:Observation.effectivePeriod.end ?end .
+  filter(?end = fhir_instance:2013-02-05T07:35:00Z)
+}
+##next

@@ -3,11 +3,13 @@
 @prefix schema: <http://schema.org/> .
 
 fhir_instance:acceleration_Jonh_k_323 fhir:Observation.component fhir_instance:component_acceleration_x_0,
-    fhir_instance:component_acceleration_y_1, fhir_instance:component_acceleration_z_2;
+    fhir_instance:component_acceleration_y_1, fhir_instance:component_acceleration_z_2,
+    fhir_instance:component_acceleration_x_7, fhir_instance:component_acceleration_y_8,
+    fhir_instance:component_acceleration_z_9;
   fhir:Observation.subject fhir_instance:Patient_Jonh_k_323;
-  fhir:Observation.bodySite fhir_instance:CodeableConcept_sensor_body_location_3;
+  fhir:Observation.bodySite fhir_instance:CodeableConcept_sensor_body_location_4, fhir_instance:CodeableConcept_sensor_body_location_11;
   fhir:Observation.effectiveDateTime fhir_instance:2015-08-18T07:25:00Z;
-  fhir:Observation.code fhir_instance:code_descriptive_statistic_5 .
+  fhir:Observation.code fhir_instance:code_descriptive_statistic_6, fhir_instance:code_descriptive_statistic_13 .
 
 fhir_instance:component_acceleration_x_0 fhir:code fhir_instance:Code_acceleration_x_0;
   fhir:component.valueQuantity fhir_instance:Quantity0 .
@@ -73,7 +75,8 @@ fhir_instance:Quantity2 a fhir:Quantity;
 fhir_instance:Patient_Jonh_k_323 a fhir:Patient;
   fhir:Patient.identifier fhir_instance:Jonh_k_323 .
 
-fhir_instance:CodeableConcept_sensor_body_location fhir:text fhir_instance:RIGHT_WRIST .
+fhir_instance:CodeableConcept_sensor_body_location fhir:text fhir_instance:RIGHT_WRIST,
+    fhir_instance:LEFT_WRIST .
 
 fhir_instance:CodeSystem_body_location a fhir:string .
 
@@ -81,16 +84,15 @@ fhir_instance:right_wrist a fhir:code .
 
 fhir_instance:RIGHT_WRIST a fhir:string .
 
-fhir_instance:CodeableConcept_sensor_body_location_3 fhir:coding fhir_instance:CodeableConcept_Coding_sensor_body_location_3;
-  fhir:display fhir_instance:RIGHT_WRIST;
-  fhir:text fhir_instance:RIGHT_WRIST .
+fhir_instance:CodeableConcept_sensor_body_location_4 fhir:coding fhir_instance:CodeableConcept_Coding_sensor_body_location_4;
+  fhir:display fhir_instance:RIGHT_WRIST .
 
-fhir_instance:CodeableConcept_Coding_sensor_body_location_3 fhir:code fhir_instance:right_wrist;
+fhir_instance:CodeableConcept_Coding_sensor_body_location_4 fhir:code fhir_instance:right_wrist;
   fhir:system fhir_instance:CodeSystem_body_location .
 
 fhir_instance:2015-08-18T07:25:00Z a fhir:dateTime .
 
-fhir_instance:code_descriptive_statistic_5 fhir:coding fhir_instance:Coding_average .
+fhir_instance:code_descriptive_statistic_6 fhir:coding fhir_instance:Coding_average .
 
 fhir_instance:average a fhir:code .
 
@@ -101,3 +103,60 @@ fhir_instance:omh_fhir_observation_codes a fhir:string .
 fhir_instance:Coding_average fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
   fhir:Coding.code fhir_instance:average;
   fhir:Coding.display fhir_instance:AVERAGE .
+
+fhir_instance:component_acceleration_x_7 fhir:code fhir_instance:Code_acceleration_x_7;
+  fhir:component.valueQuantity fhir_instance:Quantity7 .
+
+fhir_instance:Code_acceleration_x_7 fhir:coding fhir_instance:Coding_acceleration_x_7 .
+
+fhir_instance:Coding_acceleration_x_7 fhir:code fhir_instance:ACCELERATION_X;
+  fhir:display fhir_instance:OMH_to_FHIR_ACCELERATION_X;
+  fhir:system fhir_instance:omh_fhir_codes .
+
+fhir_instance:0.0596923828111 a fhir:decimal .
+
+fhir_instance:Quantity7 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:0.0596923828111;
+  fhir:Quantity.unit fhir_instance:m%2Fs%5E2 .
+
+fhir_instance:component_acceleration_y_8 fhir:code fhir_instance:Code_acceleration_y_8;
+  fhir:component.valueQuantity fhir_instance:Quantity8 .
+
+fhir_instance:Code_acceleration_y_8 fhir:coding fhir_instance:Coding_acceleration_y_8 .
+
+fhir_instance:Coding_acceleration_y_8 fhir:code fhir_instance:ACCELERATION_Y;
+  fhir:display fhir_instance:OMH_to_FHIR_ACCELERATION_Y;
+  fhir:system fhir_instance:omh_fhir_codes .
+
+fhir_instance:0.0122 a fhir:decimal .
+
+fhir_instance:Quantity8 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:0.0122;
+  fhir:Quantity.unit fhir_instance:m%2Fs%5E2 .
+
+fhir_instance:component_acceleration_z_9 fhir:code fhir_instance:Code_acceleration_z_9;
+  fhir:component.valueQuantity fhir_instance:Quantity9 .
+
+fhir_instance:Code_acceleration_z_9 fhir:coding fhir_instance:Coding_acceleration_z_9 .
+
+fhir_instance:Coding_acceleration_z_9 fhir:code fhir_instance:ACCELERATION_Z;
+  fhir:display fhir_instance:OMH_to_FHIR_ACCELERATION_Z;
+  fhir:system fhir_instance:omh_fhir_codes .
+
+fhir_instance:2.0E-4 a fhir:decimal .
+
+fhir_instance:Quantity9 a fhir:Quantity;
+  fhir:Quantity.value fhir_instance:2.0E-4;
+  fhir:Quantity.unit fhir_instance:m%2Fs%5E2 .
+
+fhir_instance:left_wrist a fhir:code .
+
+fhir_instance:LEFT_WRIST a fhir:string .
+
+fhir_instance:CodeableConcept_sensor_body_location_11 fhir:coding fhir_instance:CodeableConcept_Coding_sensor_body_location_11;
+  fhir:display fhir_instance:LEFT_WRIST .
+
+fhir_instance:CodeableConcept_Coding_sensor_body_location_11 fhir:code fhir_instance:left_wrist;
+  fhir:system fhir_instance:CodeSystem_body_location .
+
+fhir_instance:code_descriptive_statistic_13 fhir:coding fhir_instance:Coding_average .

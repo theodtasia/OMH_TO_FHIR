@@ -38,8 +38,6 @@ public class UserInput {
         String selectedOption = optionMapping.get(userChoice);
         System.out.println("You chose: " + selectedOption);
         
-        //src/main/resources/data/heart_rate
-
         return selectedOption;
     }
 

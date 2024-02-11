@@ -1,0 +1,11 @@
+PREFIX fhir: <http://hl7.org/fhir#>
+PREFIX fhir_instance: <http://hl7.org/fhir_instances#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+fhir_instance:TestShape
+  a sh:NodeShape ;
+  sh:targetClass fhir:Observation ;
+  sh:property [
+    sh:path fhir:Observation.valueQuantity ;
+    sh:class fhir:Quantity ;  # Use sh:class to specify the range
+  ].

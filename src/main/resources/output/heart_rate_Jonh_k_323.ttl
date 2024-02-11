@@ -3,11 +3,13 @@
 @prefix schema: <http://schema.org/> .
 
 fhir_instance:heart_rate_Jonh_k_323 a fhir:Observation;
-  fhir:Observation.code fhir_instance:Coding_8867-4, fhir_instance:code_descriptive_statistic_2;
+  fhir:Observation.code fhir_instance:Coding_8867-4, fhir_instance:code_descriptive_statistic_5;
   fhir:Observation.valueQuantity fhir_instance:Quantity0;
-  fhir:Observation.subject fhir_instance:Patient_Jonh_k_323;
-  fhir:Observation.component fhir_instance:component_temporal_relationship_to_physical_activity_3,
-    fhir_instance:component_temporal_relationship_to_sleep_4 .
+  fhir:Observation.effectivePeriod fhir_instance:Period1;
+  fhir:Observation.specimen fhir_instance:Reference_capillary_blood;
+  fhir:Observation.component fhir_instance:component_temporal_relationship_to_meal_3,
+    fhir_instance:component_temporal_relationship_to_sleep_4;
+  fhir:Observation.subject fhir_instance:Patient_Jonh_k_323 .
 
 fhir_instance:8867-4 a fhir:code .
 
@@ -19,51 +21,55 @@ fhir_instance:Coding_8867-4 fhir:code fhir_instance:8867-4;
   fhir:display fhir_instance:Heart_rate;
   fhir:system fhir_instance:loinc .
 
-fhir_instance:75 a fhir:decimal .
+fhir_instance:mg%2FdL a fhir:string .
 
 fhir_instance:Quantity0 a fhir:Quantity;
-  fhir:Quantity.value fhir_instance:75;
-  fhir:Quantity.unit fhir_instance:beats%2Fmin .
+  fhir:Quantity.unit fhir_instance:mg%2FdL;
+  fhir:Quantity.value fhir_instance:95 .
 
-fhir_instance:beats%2Fmin a fhir:string .
+fhir_instance:95 a fhir:decimal .
 
-fhir_instance:Patient_Jonh_k_323 a fhir:Patient;
-  fhir:Patient.identifier fhir_instance:Jonh_k_323 .
+fhir_instance:2013-02-05T07:25:00Z a fhir:dateTime .
 
-fhir_instance:code_descriptive_statistic_2 fhir:coding fhir_instance:Coding_average .
+fhir_instance:Period1 a fhir:Period;
+  fhir:Observation.effectivePeriod.start fhir_instance:2013-02-05T07:25:00Z;
+  fhir:Observation.effectivePeriod.end fhir_instance:2013-06-05T07:25:00Z .
 
-fhir_instance:average a fhir:code .
+fhir_instance:2013-06-05T07:25:00Z a fhir:dateTime .
 
-fhir_instance:AVERAGE a fhir:string .
+fhir_instance:Reference_specimen_source a fhir:Reference .
 
-fhir_instance:omh_fhir_observation_codes a fhir:string .
-
-fhir_instance:Coding_average fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
-  fhir:Coding.code fhir_instance:average;
-  fhir:Coding.display fhir_instance:AVERAGE .
-
-fhir_instance:component_temporal_relationship_to_physical_activity_3 fhir:code fhir_instance:Code_temporal_relationship_to_physical_activity_3;
-  fhir:valueCodeableConcept fhir_instance:CodeableConcept_temporal_relationship_to_physical_activity_3 .
-
-fhir_instance:Code_temporal_relationship_to_physical_activity_3 fhir:code fhir_instance:Coding_temporal_relationship_to_physical_activity_3 .
+<http://hl7.org/fhir_instances/Reference_%22capillary_blood%22> fhir:Reference.display
+    fhir_instance:Jonh_k_323 .
 
 fhir_instance:SNOMEDCT a fhir:string .
 
-fhir_instance:Before_exercise a fhir:string .
+fhir_instance:capillary_blood a fhir:string .
 
-fhir_instance:307166007 a fhir:code .
+fhir_instance:122554006 a fhir:code .
 
-fhir_instance:Coding_temporal_relationship_to_physical_activity_3 fhir:code fhir_instance:307166007;
-  fhir:display fhir_instance:Before_exercise;
+fhir_instance:Reference_specimen_source_2 fhir:code fhir_instance:122554006;
+  fhir:display fhir_instance:capillary_blood;
   fhir:system fhir_instance:SNOMEDCT .
 
-fhir_instance:CodeableConcept_temporal_relationship_to_physical_activity_3 fhir:coding
-    fhir_instance:CodeableConcept_Coding_temporal_relationship_to_physical_activity_3;
-  fhir:text fhir_instance:BEFORE_EXERCISE .
+fhir_instance:component_temporal_relationship_to_meal_3 fhir:code fhir_instance:Code_temporal_relationship_to_meal_3;
+  fhir:valueCodeableConcept fhir_instance:CodeableConcept_temporal_relationship_to_meal_3 .
 
-fhir_instance:CodeableConcept_Coding_temporal_relationship_to_physical_activity_3
-  fhir:code fhir_instance:307166007;
-  fhir:display fhir_instance:Before_exercise;
+fhir_instance:Code_temporal_relationship_to_meal_3 fhir:code fhir_instance:Coding_temporal_relationship_to_meal_3 .
+
+fhir_instance:Fasting a fhir:string .
+
+fhir_instance:16985007 a fhir:code .
+
+fhir_instance:Coding_temporal_relationship_to_meal_3 fhir:code fhir_instance:16985007;
+  fhir:display fhir_instance:Fasting;
+  fhir:system fhir_instance:SNOMEDCT .
+
+fhir_instance:CodeableConcept_temporal_relationship_to_meal_3 fhir:coding fhir_instance:CodeableConcept_Coding_temporal_relationship_to_meal_3;
+  fhir:text fhir_instance:FASTING .
+
+fhir_instance:CodeableConcept_Coding_temporal_relationship_to_meal_3 fhir:code fhir_instance:16985007;
+  fhir:display fhir_instance:Fasting;
   fhir:system fhir_instance:SNOMEDCT .
 
 fhir_instance:component_temporal_relationship_to_sleep_4 fhir:code fhir_instance:Code_temporal_relationship_to_sleep_4;
@@ -71,17 +77,32 @@ fhir_instance:component_temporal_relationship_to_sleep_4 fhir:code fhir_instance
 
 fhir_instance:Code_temporal_relationship_to_sleep_4 fhir:code fhir_instance:Coding_temporal_relationship_to_sleep_4 .
 
-fhir_instance:Before_sleeping a fhir:string .
+fhir_instance:Walking a fhir:string .
 
-fhir_instance:307155000 a fhir:code .
+fhir_instance:307156004 a fhir:code .
 
-fhir_instance:Coding_temporal_relationship_to_sleep_4 fhir:code fhir_instance:307155000;
-  fhir:display fhir_instance:Before_sleeping;
+fhir_instance:Coding_temporal_relationship_to_sleep_4 fhir:code fhir_instance:307156004;
+  fhir:display fhir_instance:Walking;
   fhir:system fhir_instance:SNOMEDCT .
 
 fhir_instance:CodeableConcept_temporal_relationship_to_sleep_4 fhir:coding fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_4;
-  fhir:text fhir_instance:BEFORE_SLEEPING .
+  fhir:text fhir_instance:WALKING .
 
-fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_4 fhir:code fhir_instance:307155000;
-  fhir:display fhir_instance:Before_sleeping;
+fhir_instance:CodeableConcept_Coding_temporal_relationship_to_sleep_4 fhir:code fhir_instance:307156004;
+  fhir:display fhir_instance:Walking;
   fhir:system fhir_instance:SNOMEDCT .
+
+fhir_instance:code_descriptive_statistic_5 fhir:coding fhir_instance:Coding_minimum .
+
+fhir_instance:minimum a fhir:code .
+
+fhir_instance:MINIMUM a fhir:string .
+
+fhir_instance:omh_fhir_observation_codes a fhir:string .
+
+fhir_instance:Coding_minimum fhir:Coding.system fhir_instance:omh_fhir_observation_codes;
+  fhir:Coding.code fhir_instance:minimum;
+  fhir:Coding.display fhir_instance:MINIMUM .
+
+fhir_instance:Patient_Jonh_k_323 a fhir:Patient;
+  fhir:Patient.identifier fhir_instance:Jonh_k_323 .

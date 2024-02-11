@@ -28,7 +28,6 @@ public class GenerateFiles {
             Rio.write(model, fos, RDFFormat.TURTLE);
             System.out.println("Turtle file created: " + fileName);
         } catch (IOException e) {
-            System.out.println("SSEE ");
             System.err.println("Error creating Turtle file: " + e.getMessage());
         }
     }

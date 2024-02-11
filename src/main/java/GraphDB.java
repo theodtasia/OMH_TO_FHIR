@@ -12,7 +12,39 @@ import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.rio.Rio;
 import org.eclipse.rdf4j.sail.shacl.GraphDBValidationException;
+import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.Resource;
+import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
+import org.eclipse.rdf4j.model.impl.TreeModel;
+import org.eclipse.rdf4j.model.util.Models;
+import org.eclipse.rdf4j.model.vocabulary.RDF;
+import org.eclipse.rdf4j.query.BindingSet;
+import org.eclipse.rdf4j.query.QueryLanguage;
+import org.eclipse.rdf4j.query.TupleQueryResult;
+import org.eclipse.rdf4j.repository.config.RepositoryConfig;
+import org.eclipse.rdf4j.repository.config.RepositoryConfigSchema;
+import org.eclipse.rdf4j.rio.RDFParser;
+import org.eclipse.rdf4j.rio.helpers.StatementCollector;
+import java.util.ArrayList;
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
+import org.eclipse.rdf4j.common.exception.ValidationException;
+import org.eclipse.rdf4j.model.Model;
+import org.eclipse.rdf4j.model.vocabulary.RDF4J;
+import org.eclipse.rdf4j.repository.RepositoryException;
+import org.eclipse.rdf4j.repository.sail.SailRepository;
+import org.eclipse.rdf4j.repository.sail.SailRepositoryConnection;
+import org.eclipse.rdf4j.rio.RDFFormat;
+import org.eclipse.rdf4j.rio.Rio;
+import org.eclipse.rdf4j.rio.WriterConfig;
+import org.eclipse.rdf4j.rio.helpers.BasicWriterSettings;
+import org.eclipse.rdf4j.sail.memory.MemoryStore;
+import org.eclipse.rdf4j.sail.shacl.ShaclSail;
+import org.eclipse.rdf4j.sail.shacl.results.ValidationReport;
+import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.io.StringReader;
 public class GraphDB {
 
     private RepositoryManager repoManager;
@@ -24,10 +56,15 @@ public class GraphDB {
             // create repository
             repoManager = RepositoryProvider.getRepositoryManager("http://localhost:7200/");
             repoManager.init();
+            createRepository();
+            printRepos();
+            repoManager.shutDown();
+
             // upload data and run queries
             connection = startConnection();
             commitShaclShapesGraph(observation);
             uploadDataAndValidate(fileNameObservation);
+            runQueries();
 
             if (connection.isOpen())
                 connection.close();
@@ -35,6 +72,7 @@ public class GraphDB {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
     }
 
     private RepositoryConnection startConnection() {
@@ -59,18 +97,9 @@ public class GraphDB {
     }
     
     private void commitShaclShapesGraph(String observation) throws IOException, GraphDBValidationException {
-    	String inputDirectory = "src/main/resources/validation/";
-	    String inputFile = inputDirectory + observation + ".txt";
-	    
-        connection.begin();
+    	Validation shaclValidation = new Validation();
+        shaclValidation.validate();
 
-        // Read SHACL rules from the file
-        String shaclRules = readShaclRulesFromFile(inputFile);
-
-        // Commit SHACL rules
-        System.out.println("Commit Shaql");
-        connection.add(new StringReader(shaclRules), "", RDFFormat.TURTLE, RDF4J.SHACL_SHAPE_GRAPH);
-        connection.commit();
     }
 
     public void clearShaclShapesGraph() {
@@ -80,7 +109,6 @@ public class GraphDB {
         connection.commit();
     }
 
- // ./src/main/resources/data/heart_rate
     public void uploadDataAndValidate(String fileName) throws FileNotFoundException {        
         try {
             // Start a new transaction for validation
@@ -111,6 +139,61 @@ public class GraphDB {
 		}
     }
 
+    private void createRepository() throws Exception{
+        System.out.println("Create Repository");
 
+        if (repoExists()) // remove and create again. Alt return
+            repoManager.removeRepository("omh_to_fhir");
 
+        TreeModel graph = new TreeModel();
+
+        InputStream config = new FileInputStream("./src/main/resources/graphConfig.ttl");
+        RDFParser rdfParser = Rio.createParser(RDFFormat.TURTLE);
+        rdfParser.setRDFHandler(new StatementCollector(graph));
+        rdfParser.parse(config, RepositoryConfigSchema.NAMESPACE);
+        config.close();
+
+        Resource repositoryNode = Models.subject(graph.filter(null, RDF.TYPE,
+                RepositoryConfigSchema.REPOSITORY)).orElse(null);
+
+        graph.add(repositoryNode, RepositoryConfigSchema.REPOSITORYID,
+                SimpleValueFactory.getInstance().createLiteral("omh_to_fhir"));
+
+        RepositoryConfig repositoryConfig = RepositoryConfig.create(graph, repositoryNode);
+        repoManager.addRepositoryConfig(repositoryConfig);
+    }
+    
+    public void runQueries() {
+        System.out.println("Run Queries");
+        SparqlQueryManager queries = new SparqlQueryManager();
+        queries.readQueriesFromFile();
+
+        for(int i=0; i< queries.getNumOfQueries(); ++i) {
+            ArrayList<ArrayList<String>> records = new ArrayList<>();
+            TupleQueryResult result = connection.prepareTupleQuery(QueryLanguage.SPARQL,
+                    queries.retrieveQuery(i)).evaluate();
+
+            while (result.hasNext()) {
+                BindingSet bindingSet = result.next();
+                ArrayList<String> bindings = new ArrayList<>();
+
+                for (String var : queries.retrieveVariables(i)) {
+                    Object binding = bindingSet.getBinding(var).getValue();
+                    if (binding instanceof IRI)
+                        binding = ((IRI) binding).getLocalName();
+                    bindings.add(binding.toString());
+                }
+                records.add(bindings);
+            }
+            result.close();
+            queries.writeQueryResultsToFile(i, records);
+        }
+    }
+
+    private void printRepos() {
+        System.out.println(repoManager.getRepositoryIDs());
+    }
+    private boolean repoExists() {
+        return repoManager.hasRepositoryConfig("");
+    }
 }

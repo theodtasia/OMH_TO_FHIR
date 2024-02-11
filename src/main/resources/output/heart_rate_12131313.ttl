@@ -54,7 +54,8 @@ fhir_instance:Coding_descriptive_statistic_2 fhir:Coding.system fhir_instance:om
   fhir:Coding.code fhir_instance:descriptive_statistic;
   fhir:Coding.display fhir_instance:DESCRIPTIVE_STATISTIC .
 
-fhir_instance:component_temporal_relationship_to_physical_activity_3 fhir:code fhir_instance:Code_temporal_relationship_to_physical_activity_3;
+fhir_instance:component_temporal_relationship_to_physical_activity_3 
+  fhir:code fhir_instance:Code_temporal_relationship_to_physical_activity_3;
   fhir:valueCodeableConcept fhir_instance:CodeableConcept_temporal_relationship_to_physical_activity_3 .
 
 fhir_instance:Code_temporal_relationship_to_physical_activity_3 fhir:code fhir_instance:Coding_temporal_relationship_to_physical_activity_3 .
@@ -79,10 +80,12 @@ fhir_instance:CodeableConcept_Coding_temporal_relationship_to_physical_activity_
   fhir:Coding.display fhir_instance:Before_exercise;
   fhir:Coding.system fhir_instance:SNOMEDCT .
 
-fhir_instance:component_temporal_relationship_to_sleep_4 fhir:code fhir_instance:Code_temporal_relationship_to_sleep_4;
+fhir_instance:component_temporal_relationship_to_sleep_4 
+  fhir:code fhir_instance:Code_temporal_relationship_to_sleep_4;
   fhir:valueCodeableConcept fhir_instance:CodeableConcept_temporal_relationship_to_sleep_4 .
 
-fhir_instance:Code_temporal_relationship_to_sleep_4 fhir:code fhir_instance:Coding_temporal_relationship_to_sleep_4 .
+fhir_instance:Code_temporal_relationship_to_sleep_4 
+  fhir:code fhir_instance:Coding_temporal_relationship_to_sleep_4 .
 
 fhir_instance:Before_sleeping a fhir:string .
 

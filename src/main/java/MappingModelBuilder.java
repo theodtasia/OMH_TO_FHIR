@@ -49,6 +49,7 @@ public class MappingModelBuilder {
 		List<String> componentsWithValues = new ArrayList<>();
 		List<String> codesWithStringValues = new ArrayList<>();
 
+		
 		for (String element : componentsCodeable) {
 			componentCodeableConcepts.add(element);
 		}
@@ -58,8 +59,8 @@ public class MappingModelBuilder {
 		for (String element : codesConcepts) {
 			codesWithStringValues.add(element);
 		}
-//		String observationFilePath = "src/main/resources/data/blood_glucose.json";
 		String configurationPath = "src/main/resources/data/codes_info.json";
+		
 		
         String observation = UserInput.getUserChoice();
 
@@ -301,13 +302,9 @@ public class MappingModelBuilder {
         // Call the createTurtleFile method
         GenerateFiles.createTurtleFile(model, observationInstanceName);
   
-        String outputDirectory = "src/main/resources/output/";
-        String fileNameObservation = outputDirectory + observationInstanceName + ".ttl";
-        
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
-        boolean validate = true;
 		String fileNameObservation;
 		String outputDirectory = "src/main/resources/output/";
 	    fileNameObservation = outputDirectory + observationInstanceName + ".ttl";
@@ -429,6 +426,7 @@ public class MappingModelBuilder {
 		builder.subject(fhirInstance + "Code_" + fieldName + "_" + counter).add(Values.iri(fhir + "code"),
 				Values.iri(fhirInstance + "Coding_" + fieldName + "_" + counter));
 
+		// ./src/main/resources/data/body_temperature
 		builder.subject(fhirInstance + configurationCodes.get("observation_codes").get(fieldName).get("options").get(fieldValue).get("system").asText()).add(RDF.TYPE, Values.iri(fhir + "string"));
 		builder.subject(fhirInstance + configurationCodes.get("observation_codes").get(fieldName).get("options").get(fieldValue).get("display").asText()).add(RDF.TYPE, Values.iri(fhir + "string"));		
 		builder.subject(fhirInstance + configurationCodes.get("observation_codes").get(fieldName).get("options").get(fieldValue).get("code").asText()).add(RDF.TYPE, Values.iri(fhir + "code"));
